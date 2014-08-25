@@ -6,6 +6,7 @@ utils.define('usertable.view', function (view) {
 	var originalTable,copyYTable,container ;
 	var isDuplicate = false;
 	var startIndex, stopIndex;
+	var rowCache = [];
 	
 	view._ready_ = function(){
 		data = store.get();
@@ -19,6 +20,7 @@ utils.define('usertable.view', function (view) {
 		view.topbar_function();
 		view.attach_table_events();
 		view.populate_table();
+		$('.navbar-form.navbar-left').removeClass('hide');
 	};
 	
 	view.topbar_function = function(){
@@ -28,7 +30,7 @@ utils.define('usertable.view', function (view) {
 			for(var i in  data){
 				for(var key in data[i]){
 					if(data[i][key] && data[i][key].indexOf && (data[i][key].indexOf(search)>-1)){
-						data[i].$row.addClass('warning');
+						rowCache[data[i]._row].addClass('warning');
 						; break;
 					}
 				}
@@ -109,8 +111,8 @@ utils.define('usertable.view', function (view) {
 				row.push('<td class="dataCell">' + (data[i][cols[j].key] || '') + '</td>');
 			}
 			row.push('</tr>');
-			data[i].$row = $(row.join(''));
-			$tBody.append(data[i].$row);
+			data[i]._row = rowCache.push($(row.join('')))-1;
+			$tBody.append(rowCache[data[i]._row]);
 		}
 	};
 	
@@ -119,7 +121,7 @@ utils.define('usertable.view', function (view) {
 	 */
     view.arrange_table = utils.executable.instance(function(){
     	for(var i in data){
-    		$tBody.append(data[i].$row);
+    		$tBody.append(rowCache[data[i]._row]);
 		}
     },this,10);
 	

@@ -1,0 +1,6 @@
+.errorBubble,.missBubble {
+	display :none;
+}
+.has-error .errorBubble,.has-warning .missBubble  {
+	display: block!important;
+}

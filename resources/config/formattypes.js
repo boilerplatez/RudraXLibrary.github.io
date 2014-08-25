@@ -19,5 +19,19 @@ utils.define('formattypes', function(formattypes) {
 			o.isValid = EMAIL_REGEX.test(i.iVal)
 		}
 	});
+	var date = utils.require('utils.date');
+	format.set('date',function(i,o){
+		if(i.iVal=="" && i.iVal==undefined){
+			o.isValid = true;
+		} else {
+			var d = date.getDateObject(i.iVal);
+			o.isValid = d.isValid;
+			if(o.isValid){
+				o.dVal = d.display;
+			} else {
+				o.dVal = i.iVal;
+			}
+		}
+	});
 	
 });

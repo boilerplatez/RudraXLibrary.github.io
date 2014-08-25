@@ -23,13 +23,18 @@ utils.define('usertable.init', function FormSubmit(formsubmit) {
 				}
 				userRow[$this.attr('name')] = $this.val();
 			});
+			$('#emailExists').addClass('hide')
 			if(has_missing || has_error){
 				$('.msg-all').addClass('hide');
 				$('.msg-error').removeClass('hide');
 			} else {
-				formsubmit.reset_input();
-				store.add(userRow);
-				$('.msg-ok').removeClass('hide');
+				if(store.add(userRow)){
+					formsubmit.reset_input();
+					$('.msg-ok').removeClass('hide');
+				} else { 
+					$('.msg-ok').addClass('hide');
+					$('#emailExists').removeClass('hide')
+				}
 			}
 			return utils.custom.preventPropagation(e);
 		});
@@ -40,7 +45,7 @@ utils.define('usertable.init', function FormSubmit(formsubmit) {
     
     formsubmit.reset_input = function(){
     	$('.msg-all').addClass('hide');
-    	$('.input',$form).val('');
+    	$('input.input',$form).val('');
     	$('.input',$form).parent().removeClass('has-error has-warning');
     };
     

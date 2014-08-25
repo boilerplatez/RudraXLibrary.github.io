@@ -5,44 +5,55 @@
 			id="inputform" id="frm">
 			<fieldset>
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="name">Blank</label>
-					<div class="col-md-5">
-					</div>
-				</div>
-				<div class="form-group">
 					<label class="col-md-4 control-label" for="name">Name</label>
 					<div class="col-md-5">
-						<input type="text" name="name" value="" class="form-control input" />
+						<input type="text" name="name" value="" class="form-control tag input required" />
+						<p class="bg-danger missBubble">Enter Name</p>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="textarea">Username*</label>
+					<label class="col-md-4 control-label" for="textarea">Username</label>
 					<div class="col-md-5">
-						<input type="text" name="username" value="" required
+						<input type="text" name="username" value=""
 							formatType="username" class="form-control tag required input" />
+						<p class="bg-warning missBubble">Enter Username</p>
+						<p class="bg-danger errorBubble">Invalid Characters, only
+							alphanumeric (eg abc123)</p>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-md-4 control-label" for="email">Email</label>
 					<div class="col-md-5">
 						<input type="text" name="email" value="" formatType="email"
-							class="form-control tag input" />
+							class="form-control tag input required" />
+						<p class="bg-warning missBubble">Enter Email</p>
+						<p class="bg-danger errorBubble">Invalid Email Address</p>
+						<p id=emailExists class="bg-danger hide">Email already exists</p>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-md-4 control-label" for="gender">Gender</label>
-					<div class="col-md-5">
+					<div class="col-md-2">
 						<select name="gender" class="form-control input">
 							<option value="male" selected>Male</option>
 							<option value="female">Female</option>
 						</select>
+					</div>
+
+					<label class="col-md-1 control-label" for="dob">DOB</label>
+					<div class="col-md-2">
+						<input type="text" name="dob" class="form-control tag input required"
+							formatType="date" />
+						<p class="bg-warning missBubble">Enter Date</p>
+						<p class="bg-danger errorBubble">Invalid Date format (eg 22/12/2014)</p>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-md-4 control-label" for="address">Address </label>
 					<div class="col-md-5">
 						<input type="text" name="address" value=""
-							class="form-control input" />
+							class="form-control input required" />
+						<p class="bg-warning missBubble">Enter Address</p>
 					</div>
 				</div>
 				<div class="form-group">
@@ -56,13 +67,16 @@
 					</div>
 					<label class="col-md-1 control-label" for="zipcode">Zip Code</label>
 					<div class="col-md-2">
-						<input type="text" name="zipcode" class="form-control tag input"
+						<input type="text" name="zipcode" class="form-control tag input required"
 							formatType="number" />
+						<p class="bg-warning missBubble">Enter Zip Code</p>
+						<p class="bg-danger errorBubble">Invalid Zip Code : Only numbers
+							allowed</p>
 					</div>
 				</div>
 				<div class="form-group">
 					<div class="col-md-2 col-md-offset-4">
-						<input type="submit" class="btn btn-primary" id="save"
+						<input type="button" class="btn btn-primary" id="save"
 							value="Save" /> <input type="reset" class="btn" vaule="Cancel"
 							id="reset">
 					</div>

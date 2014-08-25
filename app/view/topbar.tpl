@@ -9,15 +9,15 @@
 						<li class="{$page->get('homeactive')}"><a
 							href="{$smarty.const.CONTEXT_PATH}page/AddUser">Add User</a></li>
 						<li class="{$page->get('membersactive')}"><a
-							href="{$smarty.const.CONTEXT_PATH}page/UserTable">Users Table</a>
+							href="{$smarty.const.CONTEXT_PATH}page/UserTable">Users</a>
 						</li>
 						<li class="{$page->get('actoractive')}"><a
-							href="{$smarty.const.CONTEXT_PATH}page/Tab">Tabs</a></li>
+							href="{$smarty.const.CONTEXT_PATH}page/Tab">Tabs Demo</a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<form class="navbar-form navbar-left" role="search">
+				<form class="navbar-form navbar-left hide" role="search">
 					<div class="form-group">
 						<input type="text" id="search_input" class="form-control navbar_tag" placeholder="Search">
 					</div>
@@ -28,3 +28,4 @@
 		</div>
 	</div>
 </nav>
+<div style="height: 45px"></div>

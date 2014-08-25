@@ -6,20 +6,28 @@
 utils.define('usertable.store', function (store) {
 
 	var cache = utils.require('utils.cache');
-	var data = cache.get('userdata') || [];
-	var cols = cache.get('usercols') 
-		|| [ { key : 'username', label : 'Username' } ,
-		     { key : 'name', label : 'Name' },
-		     { key : 'email', label : 'Email' },
-		     { key : 'gender', label : 'Gender' },
-		     { key : 'address', label : 'Address' },
-		     { key : 'country', label : 'Country' },
-		     { key : 'zipcode', label : 'Zipcode' }
-		    ];
-	
+	var data = cache.get('userdata');
+	if(!data || !$.isArray(data)){
+		data = [];
+	}
+	var cols = cache.get('usercols');
+	if(!data || !$.isArray(data)){
+		data =  [ { key : 'username', label : 'Username' } ,
+    		     { key : 'name', label : 'Name' },
+    		     { key : 'email', label : 'Email' },
+    		     { key : 'gender', label : 'Gender' },
+    		     { key : 'address', label : 'Address' },
+    		     { key : 'country', label : 'Country' },
+    		     { key : 'zipcode', label : 'Zipcode' }
+    		    ];
+	}
 	store.add = function(userRow){
+		if(data.find(function(r){
+			if(userRow.email==r.email) return true;
+		})) return false;
 		data.push(userRow);
 		cache.set('userdata',data);
+		return true;
 	};
 	store.remove = function(i,size){
 		data.splice(i,size || 1);

@@ -1,6 +1,5 @@
 {include file="topbar.tpl"}
 <div class="container contentWrapper">
-	<div style="height: 40px"></div>
 	<ul id="tab_list" class="nav nav-tabs">
 		<li class="tab_title active"><a href="#tab1" data-toggle="tab">Tab One</a>
 		</li>
