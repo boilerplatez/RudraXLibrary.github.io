@@ -1,0 +1,14 @@
+{
+    "name": "rudrax/core",
+    "type": "library",
+    "description": "Suporting library for Rudrax",
+    "keywords": ["rudra", "API", "controller","smarty"],
+    "license": "MIT",
+    "version" : "1.0",
+    
+    "require": {
+        "rudrax/smarty": "dev-master",
+        "rudrax/phpfastcache": "dev-master",
+        "rudrax/magicmin": "dev-master"
+    }
+}

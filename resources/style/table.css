@@ -1,0 +1,45 @@
+body {
+	-moz-user-select: none;
+}
+
+.table-cols>li {
+	display: inline-block;
+	float: left
+}
+
+.table-cols {
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+th span.glyphicon-move {
+	float: left;
+	cursor: move;
+	margin-right: 5px;
+}
+
+th span.glyphicon-chevron-up,th span.glyphicon-chevron-down {
+	float: right;
+	cursor: move;
+	margin-right: 5px;
+}
+
+th span.title {
+	cursor: default;
+	margin-right: 5px;
+}
+
+td {
+	height: 40px;
+	background-color: #F9F9F9;
+}
+
+th {
+	background-color: #F2F2F2;
+}
+
+.navbar_tag {
+	height: 30px
+}

@@ -1,0 +1,11 @@
+RewriteEngine on
+
+RewriteRule ^resources/(.*).(css\.php|js\.php) ../build/resources/$1.$2 [L]
+RewriteRule ^lib/(.*).(css\.php|js\.php) ../build/lib/$1.$2 [L]
+
+RewriteRule ^lib/(.*).(css|js|txt|jpeg|jpg|png|gif|eot|svg|ttf|woff) ../lib/$1.$2 [L]
+RewriteRule ^resources/(.*).(css|js|txt|jpeg|jpg|png|gif|eot|svg|ttf|woff) ../resources/$1.$2 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
