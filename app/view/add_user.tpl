@@ -7,18 +7,21 @@
 				<div class="form-group">
 					<label class="col-md-4 control-label" for="name">Name</label>
 					<div class="col-md-5">
-						<input type="text" name="name" value="" class="form-control tag input required" />
-						<p class="bg-danger missBubble">Enter Name</p>
+						<input type="text" name="name" formatType="name" value=""
+							class="form-control tag input required" />
+						<p class="label label-warning missBubble">Enter Name</p>
+						<p class="label label-danger errorBubble">Invalid Characters, only
+							letters (minimum length 6)</p>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-md-4 control-label" for="textarea">Username</label>
 					<div class="col-md-5">
-						<input type="text" name="username" value=""
-							formatType="username" class="form-control tag required input" />
-						<p class="bg-warning missBubble">Enter Username</p>
-						<p class="bg-danger errorBubble">Invalid Characters, only
-							alphanumeric (eg abc123)</p>
+						<input type="text" name="username" value="" formatType="username"
+							class="form-control tag required input" />
+						<p class="label label-warning missBubble">Enter Username</p>
+						<p class="label label-danger errorBubble">Invalid Characters, only
+							alphanumeric (eg abc123, minimum length 6)</p>
 					</div>
 				</div>
 				<div class="form-group">
@@ -26,9 +29,9 @@
 					<div class="col-md-5">
 						<input type="text" name="email" value="" formatType="email"
 							class="form-control tag input required" />
-						<p class="bg-warning missBubble">Enter Email</p>
-						<p class="bg-danger errorBubble">Invalid Email Address</p>
-						<p id=emailExists class="bg-danger hide">Email already exists</p>
+						<p class="label label-warning missBubble">Enter Email</p>
+						<p class="label label-danger errorBubble">Invalid Email Address</p>
+						<p id=emailExists class="label label-danger hide">Email already exists</p>
 					</div>
 				</div>
 				<div class="form-group">
@@ -39,13 +42,13 @@
 							<option value="female">Female</option>
 						</select>
 					</div>
-
 					<label class="col-md-1 control-label" for="dob">DOB</label>
 					<div class="col-md-2">
-						<input type="text" name="dob" class="form-control tag input required"
-							formatType="date" />
-						<p class="bg-warning missBubble">Enter Date</p>
-						<p class="bg-danger errorBubble">Invalid Date format (eg 22/12/2014)</p>
+						<input type="text" name="dob"
+							class="form-control tag input required" formatType="date" />
+						<p class="label label-warning missBubble">Enter Date</p>
+						<p class="label label-danger errorBubble">Invalid Date format (eg
+							22/12/2014)</p>
 					</div>
 				</div>
 				<div class="form-group">
@@ -53,7 +56,7 @@
 					<div class="col-md-5">
 						<input type="text" name="address" value=""
 							class="form-control input required" />
-						<p class="bg-warning missBubble">Enter Address</p>
+						<p class="label label-warning missBubble">Enter Address</p>
 					</div>
 				</div>
 				<div class="form-group">
@@ -67,10 +70,10 @@
 					</div>
 					<label class="col-md-1 control-label" for="zipcode">Zip Code</label>
 					<div class="col-md-2">
-						<input type="text" name="zipcode" class="form-control tag input required"
-							formatType="number" />
-						<p class="bg-warning missBubble">Enter Zip Code</p>
-						<p class="bg-danger errorBubble">Invalid Zip Code : Only numbers
+						<input type="text" name="zipcode"
+							class="form-control tag input required" formatType="number" />
+						<p class="label label-warning missBubble">Enter Zip Code</p>
+						<p class="label label-danger errorBubble">Invalid Zip Code : Only numbers
 							allowed</p>
 					</div>
 				</div>
@@ -82,7 +85,7 @@
 					</div>
 					<div class="col-md-3">
 						<p class="bg-primary msg-all msg-ok hide">Saved Successfully</p>
-						<p class="bg-danger msg-all msg-error hide">Check missing and
+						<p class="label label-danger msg-all msg-error hide">Check missing and
 							invalid inputs</p>
 					</div>
 				</div>

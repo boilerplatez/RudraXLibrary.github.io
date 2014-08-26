@@ -1,3 +1,9 @@
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: 1px solid #DDDDDD;
+    line-height: 1.21429;
+    padding: 3px;
+    vertical-align: top;
+}
 body {
 	-moz-user-select: none;
 }
@@ -32,14 +38,19 @@ th span.title {
 }
 
 td {
-	height: 40px;
-	background-color: #F9F9F9;
+    background-color: #F9F9F9;
+    height: 30px;
 }
 
 th {
 	background-color: #F2F2F2;
+	height: 30px;
 }
 
 .navbar_tag {
 	height: 30px
+}
+.table, .table th {
+	font-size: 14px;
+	text-align: center!important;
 }

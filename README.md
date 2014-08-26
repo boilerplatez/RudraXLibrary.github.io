@@ -1,6 +1,7 @@
 Project Folder Struture
 =============
 PROJECT
+
 	->app
 		->handler
 		->model
