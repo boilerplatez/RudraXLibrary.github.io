@@ -63,3 +63,12 @@ utils.define('usertable.store', function (store) {
 	
 });
 
+
+if(!Array.prototype.find){
+	Array.prototype.find = function(cb){
+	   for(var i in this){
+		if(cb(this[i])) return true;
+		else false;
+	   }
+	}
+}
