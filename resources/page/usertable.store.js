@@ -11,8 +11,8 @@ utils.define('usertable.store', function (store) {
 		data = [];
 	}
 	var cols = cache.get('usercols');
-	if(!data || !$.isArray(data)){
-		data =  [ { key : 'username', label : 'Username' } ,
+	if(!cols || !$.isArray(cols)){
+		cols =  [ { key : 'username', label : 'Username' } ,
     		     { key : 'name', label : 'Name' },
     		     { key : 'email', label : 'Email' },
     		     { key : 'gender', label : 'Gender' },
