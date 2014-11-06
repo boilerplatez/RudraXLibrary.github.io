@@ -45,5 +45,9 @@ obj
 # Other Files #
 ###############
 build/*/*
-#lib/*
+lib/*
 *~
+
+# Except this file
+!build/.gitignore
+!lib/.gitignore
