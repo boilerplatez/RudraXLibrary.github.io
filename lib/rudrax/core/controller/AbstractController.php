@@ -33,13 +33,7 @@ abstract class AbstractController {
 		}
 		$this->user->save();
 	}
-
 	abstract public function invoke(User $user, $handlerName);
-
-}
-
-abstract class AbstractSmartyController extends AbstractController{
-
 	protected static function setSmartyPaths(Smarty $viewModel){
 		$viewModel->setTemplateDir(get_include_path() .Config::get('VIEW_PATH'));
 		$viewModel->setConfigDir(get_include_path() . Config::get('CONFIG_PATH'));
@@ -58,5 +52,4 @@ abstract class AbstractSmartyController extends AbstractController{
 		}
 		$viewModel->setCompileDir($TEMP_PATH);
 	}
-
 }

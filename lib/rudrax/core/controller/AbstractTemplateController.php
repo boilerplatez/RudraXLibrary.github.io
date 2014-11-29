@@ -5,8 +5,9 @@
 */
 include_once (LIB_PATH . "/rudrax/smarty/Smarty.class.php");
 include_once (RUDRA . "/core/controller/AbstractController.php");
+include_once (RUDRA . "/core/model/Page.php");
 
-class AbstractTemplateController extends AbstractSmartyController {
+class AbstractTemplateController extends AbstractController {
 
 	public function getHandlerPath() {
 		return "";
@@ -28,7 +29,6 @@ class AbstractTemplateController extends AbstractSmartyController {
 		}
 		
 		if ($temp != NULL) {
-			$temp->setUser($user );
 
 			if ($tempClass->hasMethod("invokeHandler" )) {
 				$tpl = new Smarty();
@@ -36,11 +36,13 @@ class AbstractTemplateController extends AbstractSmartyController {
 				self::setSmartyPaths($tpl);
 				// $tpl->testInstall(); exit;
 				$tpl->debugging = Config::get('SMARTY_DEBUG');
-				$temp->setTemplate($tpl);
+				$page = new Page();
 				$view = RudraX::invokeMethodByReflectionClass($tempClass,$temp,'invokeHandler',array(
 						'tpl' => $tpl,
 						'viewModel' => $tpl,
-						'user' => $user
+						'user' => $user,
+						'page' => $page,
+						'dataModel' => $page->data
 				));
 				//$view = $temp->invokeHandler($tpl );
 				if (! isset($view )) {
@@ -59,6 +61,11 @@ class AbstractTemplateController extends AbstractSmartyController {
 				} else {
 					$tpl->display($this->getViewPath() . $view . Config::get('TEMP_EXT'));
 				}
+				echo TEMP_DELIMITER;
+				if(BROWSER_LOGS){
+					Browser::printlogs();
+				}
+				echo TEMP_DELIMITER.json_encode($page->data->data);
 			} else if ($tempClass->hasMethod("invoke" )) {
 				$view = $temp->invoke();
 				if (! isset($view )) {

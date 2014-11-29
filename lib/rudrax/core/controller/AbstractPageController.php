@@ -8,7 +8,7 @@ include_once (RUDRA . "/core/controller/AbstractController.php");
 include_once (RUDRA . "/core/model/Header.php");
 include_once (RUDRA . "/core/model/Page.php");
 
-class AbstractPageController extends AbstractSmartyController {
+class AbstractPageController extends AbstractController {
 
 	public function getHandlerPath() {
 		return "";
@@ -29,7 +29,6 @@ class AbstractPageController extends AbstractSmartyController {
 			$temp = $tempClass->newInstance();
 		}
 		if ($temp != NULL) {
-			$temp->setUser($user );
 
 			if ($tempClass->hasMethod("invokeHandler" )) {
 				$tpl = new Smarty();
@@ -37,7 +36,6 @@ class AbstractPageController extends AbstractSmartyController {
 				self::setSmartyPaths($tpl);
 				// $tpl->testInstall(); exit;
 				$tpl->debugging = Config::get('SMARTY_DEBUG');
-				$temp->setTemplate($tpl );
 				$header = new Header($tpl);
 				$page = new Page();
 				$view = RudraX::invokeMethodByReflectionClass($tempClass,$temp,'invokeHandler',array(

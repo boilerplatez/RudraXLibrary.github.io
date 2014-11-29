@@ -27,7 +27,7 @@ class Header {
 	public static $REPLACE_REGEX;
 	public static $BUILD_PATH;
 
-	public function  __construct(Smarty $tpl){
+	public function  __construct(){
 		$this->modules = Rudrax::getModules();
 		$this->minified = new Minifier( array(
 				'echo' => false,
@@ -57,7 +57,7 @@ class Header {
 	}
 
 	private function _import($module){
-		Browser::console($module);
+		//Browser::console($module);
 		if(isset($this->modules[$module]) && !isset($this->dones[$module])){
 			$this->dones[$module] = $module;
 			$this->add($module,$this->modules[$module]);
@@ -94,7 +94,7 @@ class Header {
 			}
 		}
 	}
-
+	
 	public function addFile($module,$key,$value){
 		$ext = strtolower(pathinfo($value, PATHINFO_EXTENSION));
 		if(!is_remote_file($value)){
@@ -113,7 +113,7 @@ class Header {
 			}
 		}
 	}
-
+	
 	public function minify(){
 		foreach($this->scripts as $key=>$value){
 			//$newName = self::$BUILD_PATH.RESOURCE_PATH.preg_replace(self::$REPLACE_REGEX,"",$this->scripts[$key],1);

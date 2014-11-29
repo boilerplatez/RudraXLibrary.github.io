@@ -5,7 +5,7 @@
  */
 require_once "Console.php";
 include_once ("model/AbstractRequest.php");
-
+global $RDb;
 class RudraX {
 
 	public static $websitecache;
@@ -25,7 +25,6 @@ class RudraX {
 		}	else self::$webmodules =self::WebCache()->get('modules');
 	}
 
-
 	public static function getModules(){
 		return self::$webmodules['mods'];
 	}
@@ -34,11 +33,15 @@ class RudraX {
 		return self::$websitecache;
 	}
 
-	public static function loadConfig($file){
+	public static function loadConfig($file,$file2=null){
 		ob_start ();
 		session_start ();
 		$DEFAULT_GLOB = parse_ini_file ("config/_project.properties", TRUE );
 		$GLOBALS ['CONFIG']= parse_ini_file ($file, TRUE );
+
+		if($file2!=null && file_exists($file2)){
+			$GLOBALS ['CONFIG'] = array_merge($GLOBALS ['CONFIG'],parse_ini_file ($file2, TRUE ));
+		}
 
 		$GLOBALS ['CONFIG']['GLOBAL'] = array_merge(
 				$DEFAULT_GLOB['GLOBAL'],
@@ -101,6 +104,18 @@ class RudraX {
 		}
 		return new DataController();
 	}
+
+	public static function invokeHandler ($handlerName){
+		self::includeUser();
+		if (file_exists(get_include_path() . CONTROLLER_PATH . "/NoController.php" )) {
+			include_once (CONTROLLER_PATH . "/NoController.php");
+		} else {
+			include_once ("controller/NoController.php");
+		}
+		$controller = new NoController();
+		return $controller->invokeHandler($handlerName);
+	}
+
 	public static function includeUser(){
 		include_once ("model/AbstractUser.php");
 		if (file_exists ( get_include_path () . MODEL_PATH . "/User.php" )) {
@@ -141,21 +156,62 @@ class RudraX {
 		return call_user_func_array(array($object, $methodName), self::getArgsArray($reflectionMethod,$argArray));
 	}
 
+	public static $url_callback = null;
+	public static $url_size = 0;
+	public static $url_varmap = null;
+
+	public static function mapRequestInvoke (){
+		return self::_mapRequest(self::$url_varmap,self::$url_callback);
+	}
 	public static function mapRequest ($mapping,$callback){
 		if(self::$REQUEST_MAPPED) return;
 		$mapper = preg_replace('/\{(.*?)\}/m','(?P<$1>[\w\.]*)', str_replace('/','#',$mapping));
-		$varmap = array();
-		preg_match("/".$mapper."/",str_replace( array("/"),
-		array("#"),Q),$varmap);
-
+		$mapperArray = explode("#",$mapper);
+		$mapperSize = (empty($mapping) ? 0 : count($mapperArray))+1;
+		if(self::$url_size < $mapperSize){
+			$varmap = array();
+			preg_match("/".$mapper."/",str_replace( "/","#",Q),$varmap);
+			if(count($varmap)>0){
+				self::$url_size = $mapperSize;
+				self::$url_callback = $callback;
+				self::$url_varmap = $varmap;
+			}
+		}
+	}
+	public static function _mapRequest ($varmap,$callback){
 		$request =  HttpRequest::getInstance()->loadParams($varmap);
 		$argArray = self::getArgsArray(new ReflectionFunction($callback),$varmap,NULL,TRUE);
 		$request->loadParams($argArray);
-		//print_r($argArray);
-		if(count($varmap)>0){
-			self::$REQUEST_MAPPED = TRUE;
-			return call_user_func_array($callback, $argArray);
+		self::$REQUEST_MAPPED = TRUE;
+		return call_user_func_array($callback, $argArray);
+	}
+
+	public static function resolvePath($str){
+		$array = explode( '/', $str);
+		$domain = array_shift( $array);
+		$parents = array();
+		foreach( $array as $dir) {
+			switch( $dir) {
+				case '.':
+					// Don't need to do anything here
+					break;
+				case '..':
+					array_pop( $parents);
+					break;
+				default:
+					$parents[] = $dir;
+					break;
+			}
 		}
+		return $domain . '/' . implode( '/', $parents);
+	}
+
+	public static function classInfo($path){
+		$info = explode("/",$path);
+		return array(
+				"class_name" =>	end($info),
+				"file_path" => $path
+		);
 	}
 
 	public static function getModuleProperties($dir,$filemodules = array("_" => array(),"mods" => array())){
@@ -173,18 +229,19 @@ class RudraX {
 					try{
 						$mod_file = $dir.'/'.$entry;
 						$mode_time = filemtime($mod_file);
-						if(!DEBUG_BUILD && isset($filemodules["_"][$mod_file]) && $mode_time == $filemodules["_"][$mod_file]){
-							Browser::console("from cache....");
+						if(isset($filemodules["_"][$mod_file]) && $mode_time == $filemodules["_"][$mod_file]){
+							//Browser::console("from cache....");
 						} else {
 							$filemodules["_"][$mod_file] = $mode_time;
 							$r = parse_ini_file ($dir.'/'.$entry, TRUE );
-							Browser::console($dir.'/'.$entry);
+							//Browser::console($dir.'/'.$entry);
 							foreach($r as $mod=>$files){
 								$filemodules['mods'][$mod] = array();
 								foreach($files as $key=>$file){
-									if($key!='@' && !is_remote_file($file))
+									if($key!='@' && !is_remote_file($file)){
 										$filemodules['mods'][$mod][$key] = $dir.'/'.$file;
-									else $filemodules['mods'][$mod][$key] = $file;
+										//$filemodules['mods'][$mod][$key] = self::resolvePath($dir.'/'.$file);
+									} else $filemodules['mods'][$mod][$key] = $file;
 								}
 							}
 						}
@@ -196,6 +253,38 @@ class RudraX {
 		}
 		$d->close();
 		return $filemodules;
+	}
+
+	public static function invoke($_conf=array()){
+		$conf = array_merge(array(
+				'controller' => 'web.php',
+				'DEFAULT_DB' => 'DB1'
+		),$_conf);
+		//Loads all the Constants
+		self::loadConfig("../app/config/project.properties","../local/project.properties");
+		//Initialze Rudrax
+		self::init();
+		global $RDb;
+		if(isset($conf["DEFAULT_DB"])){
+			$RDb = self::getDB($conf["DEFAULT_DB"]);
+		}
+		// Define Custom Request Plugs
+		require_once(APP_PATH."/controller/".$conf["controller"]);
+
+		// Default RudraX Plug
+		self::mapRequest("template/{temp}",function($temp="nohandler"){
+			return self::invokeHandler($temp);
+		});
+		self::mapRequest('data/{eventname}',function($eventName="dataHandler"){
+			$controller = self::getDataController();
+			$controller->invokeHandler($eventName);
+		});
+		// Default Plug for default page
+		self::mapRequest("",function(){
+			return self::invokeHandler("Index");
+		});
+		self::mapRequestInvoke();
+		$RDb->close();
 	}
 
 }
@@ -220,6 +309,15 @@ class Browser {
 		self::$console = new Console();
 	}
 	public static function console($msgData){
+		return self::$console->browser($msgData,debug_backtrace ());
+	}
+	public static function log(){
+		$args = func_get_args ();
+		$msgData = "\"";
+		foreach ($args as $key=>$val){
+			$msgData = $msgData.",".json_encode($val);
+		}
+		$msgData = $msgData.",\"";
 		return self::$console->browser($msgData,debug_backtrace ());
 	}
 	public static function printlogs(){

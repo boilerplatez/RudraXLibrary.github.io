@@ -6,5 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'kartik\\' => array($vendorDir . '/kartik-v/bootstrap-star-rating'),
 );

@@ -565,6 +565,25 @@ class Minifier {
     
     } //end make_min()
     
+    public static function resolvePath($str){
+    	$array = explode( '/', $str);
+    	$domain = array_shift( $array);
+    	$parents = array();
+    	foreach( $array as $dir) {
+    		switch( $dir) {
+    			case '.':
+    				// Don't need to do anything here
+    				break;
+    			case '..':
+    				array_pop( $parents);
+    				break;
+    			default:
+    				$parents[] = $dir;
+    				break;
+    		}
+    	}
+    	return $domain . '/' . implode( '/', $parents);
+    }
 
     /**
      * Get contents of JS or CSS script, create minified version
@@ -585,7 +604,7 @@ class Minifier {
     public function minify( $src_file, $file = '', $version = '' )
     {
         global $messages;
-        
+        //$src_file = self::resolvePath($src_file);
         //Since the $file (output) filename is optional, if empty, just add .min.[ext]
         if( empty( $file ) )
         {
@@ -596,13 +615,17 @@ class Minifier {
             $file = $ext['dirname'] . '/' . $ext['filename'] . '.min.' . $ext['extension'];
 
         } else {
-        	$ext = pathinfo( $file );
-        	if (!file_exists( $ext['dirname'])) {
-        		if(!mkdir( $ext['dirname'], 0777, true)){
-        			die('Failed to create folders...'.$ext['dirname']);
-        		};
+        	$ext = pathinfo($file);
+        	$directry = $ext['dirname']; //self::resolvePath($ext['dirname']);
+        	//Browser::console("directry::".self::resolvePath($ext['dirname']));
+        	$old = umask(0);
+        	if (!file_exists($directry)) {
+        		if(!mkdir($directry, 0777, true)){
+        			die('Failed to create folder : '.$directry);
+        		}
+        		umask($old);
         	}
-        	$this->output_dir = $ext['dirname'];
+        	$this->output_dir = $directry;
         }
         
         //If we have gzip enabled, we must account for the .php extension
