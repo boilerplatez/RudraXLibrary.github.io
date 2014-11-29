@@ -44,9 +44,6 @@ obj
 
 # Other Files #
 ###############
-build/*/*
-lib/*
-lib
 *~
 
 # Except this file
