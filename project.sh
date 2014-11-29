@@ -23,6 +23,12 @@ then
 	mkdir -p build
 	echo "building project..."
 	zip -9 -r --exclude=*.git* --exclude="build/*/*" --exclude="local/*/*" build/webapp.zip *
+elif [ "$1" = "status" ]
+then
+	find lib -maxdepth 2 -type d -exec echo "************* "{}" " \; \
+	-exec  git --git-dir={}/.git --work-tree=$PWD/{} status -s -b \; \
+	-exec echo  \; 
+	git status -s -b
 else
     echo "no action"
 fi
