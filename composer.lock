@@ -228,7 +228,7 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/jqgeeks/observable.git",
-                "reference": "0f839ed5cc3eac70ef2395255e36bb731fd4b28d"
+                "reference": "aab1bee88e3021ebbe22bbd1b6a77ba3ea161193"
             },
             "require": {
                 "jqgeeks/utils": ">=1.0.0"
@@ -243,7 +243,7 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-11-29 10:07:01"
+            "time": "2014-11-29 10:14:20"
         },
         {
             "name": "jqgeeks/poplee",
@@ -395,7 +395,7 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/rudrax/rudra-core.git",
-                "reference": "ffa31ffd541f03fd09451d97f49abb2574dbc438"
+                "reference": "b5e9f88fec67c7622efc02b9dd830ef887d7b0a6"
             },
             "require": {
                 "rudrax/magicmin": "2.5.*",
@@ -414,7 +414,7 @@
                 "rudra",
                 "smarty"
             ],
-            "time": "2014-11-09 19:38:02"
+            "time": "2014-11-29 10:52:37"
         },
         {
             "name": "rudrax/magicmin",
