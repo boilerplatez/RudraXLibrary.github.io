@@ -15,7 +15,7 @@ RudraX::mapRequest('data/{eventName}',function($eventName="dataHandler"){
 	$controller->invokeHandler($eventName);
 });
 
-RudraX::mapRequest("bigpipe",function($action){
+RudraX::mapRequest("",function($action){
 	global $controller;
 	$controller = RudraX::getPageController();
 	$controller->invokeHandler("Sampleone");

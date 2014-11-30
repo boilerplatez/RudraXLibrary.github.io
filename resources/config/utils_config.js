@@ -1,8 +1,18 @@
 utils.config.set({
 	debug : true,
-	baseUrl : '/mango_spring/web/resources/',
+	contextPath : CONTEXT_PATH,
+	resourcePath : 'resources',
+	bundle_list : "/mangospring/web/resources.json?cb=utils.updateBundle&$=*&",
 	moduleDir : {
-		'utils.*' : '../lib/jqgeeks/utils/',
-		'usertable.*' : '/page/'
+		'usertable.*' : 'page/',
+		'test.*' : 'test/'
 	},
+	template : 'folader',
+	combine : false,
+	TAG_ATTR : {
+		DATA_PATH : 'rx-path',
+		DATA_ONCHANGE : 'rx-onchange',
+		DATA_ONCLICK : 'rx-click',
+		DATA_FORMAT : 'data-format'
+	}
 });
