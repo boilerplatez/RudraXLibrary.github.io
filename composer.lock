@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "65b096d8b5b4968de762330452774547",
+    "hash": "0e2093318472b4bcaf593a4924e85d94",
     "packages": [
         {
             "name": "fortawesome/font-awesome",
@@ -223,6 +223,29 @@
             "time": "2014-07-26 15:45:27"
         },
         {
+            "name": "jqgeeks/mvc",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/jqgeeks/mvc.git",
+                "reference": "ee348e2d06670da07cb847ec4ee12306580d9b3d"
+            },
+            "require": {
+                "jqgeeks/utils": ">=1.0.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A native observer utility",
+            "keywords": [
+                "api",
+                "rudra"
+            ],
+            "time": "2014-11-30 16:49:39"
+        },
+        {
             "name": "jqgeeks/observable",
             "version": "dev-master",
             "source": {
@@ -251,7 +274,7 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/jqgeeks/poplee.git",
-                "reference": "e21e3b6adecc2a8dc01c894441adcbcc1ab2187b"
+                "reference": "4776bcd372d741d6a37011a084a2308de2970afe"
             },
             "require": {
                 "jqgeeks/observable": "dev-master",
@@ -269,7 +292,7 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-11-29 10:09:52"
+            "time": "2014-11-30 16:44:52"
         },
         {
             "name": "jqgeeks/storage-api",
@@ -301,7 +324,7 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/jqgeeks/tunnel.git",
-                "reference": "bdd62113881df5210ed6f7018ef4066c99702d7d"
+                "reference": "378c5dd0302f260ed91436b9c31cd2f57233d969"
             },
             "require": {
                 "jqgeeks/jquery": ">=1.3.0",
@@ -317,7 +340,7 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-11-27 17:56:48"
+            "time": "2014-11-30 16:36:44"
         },
         {
             "name": "jqgeeks/typeahead",
@@ -348,7 +371,7 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/jqgeeks/utils.git",
-                "reference": "bcabdbe16894d67cd1628b23f471726a812c7e0f"
+                "reference": "74e80d3a99efd87d3035211b0baf34e44ef09a58"
             },
             "require": {
                 "jqgeeks/jquery": ">=1.3.0"
@@ -363,7 +386,7 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-11-29 09:22:59"
+            "time": "2014-12-02 19:58:46"
         },
         {
             "name": "jqgeeks/vutils",
@@ -371,7 +394,7 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/jqgeeks/vutils.git",
-                "reference": "560f06d73127d449edd0a6bd634f3ea53de94851"
+                "reference": "90ec29e7733418431411165e546340d9c246d745"
             },
             "require": {
                 "jqgeeks/jquery": ">=1.3.0",
@@ -387,7 +410,7 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-11-24 19:40:59"
+            "time": "2014-12-02 20:00:13"
         },
         {
             "name": "rudrax/core",
@@ -395,7 +418,7 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/rudrax/rudra-core.git",
-                "reference": "b5e9f88fec67c7622efc02b9dd830ef887d7b0a6"
+                "reference": "5d60af21525d2f855bf343c576e3f3d58e14ee97"
             },
             "require": {
                 "rudrax/magicmin": "2.5.*",
@@ -414,7 +437,7 @@
                 "rudra",
                 "smarty"
             ],
-            "time": "2014-11-29 10:52:37"
+            "time": "2014-11-30 16:46:48"
         },
         {
             "name": "rudrax/magicmin",
@@ -495,7 +518,8 @@
         "jqgeeks/typeahead": 20,
         "jqgeeks/storage-api": 20,
         "jqgeeks/hello.js": 20,
-        "jqgeeks/bootstrap-social": 20
+        "jqgeeks/bootstrap-social": 20,
+        "jqgeeks/mvc": 20
     },
     "prefer-stable": false,
     "platform": [],

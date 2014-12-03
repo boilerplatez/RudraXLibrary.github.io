@@ -13,6 +13,8 @@
 		"jqgeeks/typeahead": "dev-master",
 		"jqgeeks/storage-api": "dev-master",
 		"jqgeeks/hello.js": "dev-master",
-		"jqgeeks/bootstrap-social": "dev-master"
+		"jqgeeks/bootstrap-social": "dev-master",
+		"webmodules/webcomponentsjs": "dev-master",
+		"jqgeeks/mvc": "dev-master"
     }
 }
