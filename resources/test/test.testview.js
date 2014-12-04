@@ -2,7 +2,7 @@ utils.define('test.testview').extend('utils.viewmodel').as(function(testview,_in
 	
 	_instance_._init_ = function(){
 		this.model({mykey : "Hello"});
-		this.view('tets.testview.html',{
+		this.view('test.testview.html',{
 			start : "he data"
 		});
 	};
