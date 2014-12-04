@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "65b096d8b5b4968de762330452774547",
+    "hash": "05aa5eac5b89d958c2f8ed920f24ed30",
     "packages": [
         {
             "name": "fortawesome/font-awesome",
@@ -99,16 +99,16 @@
             "time": "2014-06-04 15:10:13"
         },
         {
-            "name": "jqgeeks/bootstrap",
+            "name": "webmodules/bootstrap",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://gitlab.com/jqgeeks/bootstrap.git",
-                "reference": "774a46bda6b70ff19620dddbb267c6192ba30f50"
+                "url": "https://gitlab.com/webmodules/bootstrap.git",
+                "reference": "6d481d0b8881b820028b2db8f1859343433f2e32"
             },
             "require": {
                 "frameworks/bootstrap": "3.2.*",
-                "jqgeeks/jquery": ">=1.3.0"
+                "webmodules/jquery": ">=1.3.0"
             },
             "suggest": {
                 "fortawesome/font-awesome": "4.1.0 - Allows more advanced features",
@@ -124,22 +124,22 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-10-27 18:05:40"
+            "time": "2014-12-04 09:40:14"
         },
         {
-            "name": "jqgeeks/bootstrap-social",
+            "name": "webmodules/bootstrap-social",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://gitlab.com/jqgeeks/bootstrap-social.git",
-                "reference": "be1a9311c4ef43e45937d17bd57b036b2cb28be9"
+                "url": "https://gitlab.com/webmodules/bootstrap-social.git",
+                "reference": "3b0d09c95311702f1672276aee0f95729c7fbca8"
             },
             "require": {
                 "fortawesome/font-awesome": "4.1.0",
-                "jqgeeks/bootstrap": "dev-master"
+                "webmodules/bootstrap": "dev-master"
             },
             "suggest": {
-                "jqgeeks/bootstrap": "dev-master0 - Allows more advanced features"
+                "webmodules/bootstrap": "dev-master0 - Allows more advanced features"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -151,15 +151,15 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-07-24 15:28:47"
+            "time": "2014-12-04 09:48:37"
         },
         {
-            "name": "jqgeeks/hello.js",
+            "name": "webmodules/hello.js",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://gitlab.com/jqgeeks/hello-js.git",
-                "reference": "40db097f8227c4b3fa4ff099966dbd20e3190e5a"
+                "url": "https://gitlab.com/webmodules/hello-js.git",
+                "reference": "3df9b467f6aee97ba4be52ec0c395594bfbce330"
             },
             "require": {
                 "frameworks/jquery": "2.*"
@@ -174,15 +174,15 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-07-26 15:47:53"
+            "time": "2014-12-04 09:40:45"
         },
         {
-            "name": "jqgeeks/jquery",
-            "version": "2.1.0",
+            "name": "webmodules/jquery",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://gitlab.com/jqgeeks/jquery.git",
-                "reference": "9fd5c9388d6066ead77432465bb60ea540460a71"
+                "url": "https://gitlab.com/webmodules/jquery.git",
+                "reference": "632fb2ed30b834ed4e5ef397b490a33bf48b715e"
             },
             "require": {
                 "frameworks/jquery": "2.*"
@@ -197,30 +197,7 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-09-28 09:05:54"
-        },
-        {
-            "name": "jqgeeks/jquery-cookie",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://gitlab.com/jqgeeks/jquery-cookie.git",
-                "reference": "b7b0e756f23c6bb12057f8746a2cceebacd081c2"
-            },
-            "require": {
-                "jqgeeks/jquery": "2.*"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "JQuery Utilitties compatible with rudrax framework",
-            "keywords": [
-                "api",
-                "rudra"
-            ],
-            "time": "2014-07-26 15:45:27"
+            "time": "2014-12-04 09:40:33"
         },
         {
             "name": "jqgeeks/mvc",
@@ -228,7 +205,7 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/jqgeeks/mvc.git",
-                "reference": "8a68f6a5032960ce9f6b6165f897149daeff7493"
+                "reference": "b233534f1a28e8edbdd3f20d7fd1a6c2c77a9259"
             },
             "require": {
                 "jqgeeks/utils": ">=1.0.0",
@@ -244,7 +221,7 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-12-03 12:37:20"
+            "time": "2014-12-04 08:52:36"
         },
         {
             "name": "jqgeeks/observable",
@@ -297,16 +274,16 @@
             "time": "2014-12-03 12:04:59"
         },
         {
-            "name": "jqgeeks/storage-api",
+            "name": "webmodules/storage-api",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://gitlab.com/jqgeeks/storage-api.git",
-                "reference": "09b97c4ef3a0902fbab015245e135e202f1a5294"
+                "url": "https://gitlab.com/webmodules/storage-api.git",
+                "reference": "e2e1599ab1e90f853972c12d665fa47e3db02182"
             },
             "require": {
-                "jqgeeks/jquery": "2.*",
-                "jqgeeks/jquery-cookie": "dev-master"
+                "webmodules/jquery": "2.*",
+                "webmodules/jquery-cookie": "dev-master"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -318,7 +295,7 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-07-26 15:42:39"
+            "time": "2014-12-04 09:43:28"
         },
         {
             "name": "jqgeeks/tunnel",
@@ -326,7 +303,7 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/jqgeeks/tunnel.git",
-                "reference": "bdd62113881df5210ed6f7018ef4066c99702d7d"
+                "reference": "91ae3b22586059a2142032e69d21489372075963"
             },
             "require": {
                 "jqgeeks/jquery": ">=1.3.0",
@@ -342,18 +319,18 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-11-27 17:56:48"
+            "time": "2014-12-04 08:53:36"
         },
         {
-            "name": "jqgeeks/typeahead",
+            "name": "webmodules/typeahead",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://gitlab.com/jqgeeks/typeahead.git",
-                "reference": "caf9324361d5cd8637fb188f3c7aaf2add3e97a5"
+                "url": "https://gitlab.com/webmodules/typeahead.git",
+                "reference": "bdae31690088f543ae8c2caf7b760cf90466f51c"
             },
             "require": {
-                "jqgeeks/jquery": "2.*"
+                "webmodules/jquery": "2.*"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -365,7 +342,7 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-07-26 15:17:12"
+            "time": "2014-12-04 09:47:36"
         },
         {
             "name": "jqgeeks/utils",
@@ -373,10 +350,10 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/jqgeeks/utils.git",
-                "reference": "bcabdbe16894d67cd1628b23f471726a812c7e0f"
+                "reference": "50caafb8cc153573907ba205a5aa036b461eb860"
             },
             "require": {
-                "jqgeeks/jquery": ">=1.3.0"
+                "webmodules/jquery": ">=1.3.0"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -388,7 +365,7 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-11-29 09:22:59"
+            "time": "2014-12-04 08:54:25"
         },
         {
             "name": "jqgeeks/vutils",
@@ -396,10 +373,10 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/jqgeeks/vutils.git",
-                "reference": "560f06d73127d449edd0a6bd634f3ea53de94851"
+                "reference": "90ec29e7733418431411165e546340d9c246d745"
             },
             "require": {
-                "jqgeeks/jquery": ">=1.3.0",
+                "webmodules/jquery": ">=1.3.0",
                 "jqgeeks/utils": ">=1.0.0"
             },
             "type": "library",
@@ -412,7 +389,7 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-11-24 19:40:59"
+            "time": "2014-12-02 20:00:13"
         },
         {
             "name": "rudrax/core",
@@ -420,7 +397,7 @@
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/rudrax/rudra-core.git",
-                "reference": "b5e9f88fec67c7622efc02b9dd830ef887d7b0a6"
+                "reference": "5d60af21525d2f855bf343c576e3f3d58e14ee97"
             },
             "require": {
                 "rudrax/magicmin": "2.5.*",
@@ -439,7 +416,7 @@
                 "rudra",
                 "smarty"
             ],
-            "time": "2014-11-29 10:52:37"
+            "time": "2014-11-30 16:46:48"
         },
         {
             "name": "rudrax/magicmin",
@@ -508,6 +485,80 @@
             "time": "2014-07-24 07:21:32"
         },
         {
+            "name": "webmodules/bootstrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/webmodules/bootstrap.git",
+                "reference": "6d481d0b8881b820028b2db8f1859343433f2e32"
+            },
+            "require": {
+                "frameworks/bootstrap": "3.2.*",
+                "webmodules/jquery": ">=1.3.0"
+            },
+            "suggest": {
+                "fortawesome/font-awesome": "4.1.0 - Allows more advanced features",
+                "kartik-v/bootstrap-star-rating": "dev-master - Allows more advanced features"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "JQuery Utilitties compatible with rudrax framework",
+            "keywords": [
+                "api",
+                "rudra"
+            ],
+            "time": "2014-12-04 09:40:14"
+        },
+        {
+            "name": "webmodules/jquery",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/webmodules/jquery.git",
+                "reference": "9fd5c9388d6066ead77432465bb60ea540460a71"
+            },
+            "require": {
+                "frameworks/jquery": "2.*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "JQuery Utilitties compatible with rudrax framework",
+            "keywords": [
+                "api",
+                "rudra"
+            ],
+            "time": "2014-09-28 09:05:54"
+        },
+        {
+            "name": "webmodules/jquery-cookie",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/webmodules/jquery-cookie.git",
+                "reference": "38f2dcdbe7f855ac53687f1ce5986dea1901a119"
+            },
+            "require": {
+                "webmodules/jquery": "2.*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "JQuery Utilitties compatible with rudrax framework",
+            "keywords": [
+                "api",
+                "rudra"
+            ],
+            "time": "2014-12-04 09:44:08"
+        },
+        {
             "name": "webmodules/rivets",
             "version": "dev-master",
             "source": {
@@ -526,6 +577,26 @@
                 "rudra"
             ],
             "time": "2014-12-03 12:27:57"
+        },
+        {
+            "name": "webmodules/webcomponentsjs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/webmodules/webcomponentsjs.git",
+                "reference": "f185f36b9da30071849f38b3cb9618048b487894"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A suite of polyfills supporting the HTML Web Components specs: http://webcomponents.org/polyfills/",
+            "keywords": [
+                "api",
+                "rudra"
+            ],
+            "time": "2014-12-03 11:51:04"
         }
     ],
     "packages-dev": [],
@@ -540,7 +611,9 @@
         "jqgeeks/typeahead": 20,
         "jqgeeks/storage-api": 20,
         "jqgeeks/hello.js": 20,
-        "jqgeeks/bootstrap-social": 20
+        "jqgeeks/bootstrap-social": 20,
+        "webmodules/webcomponentsjs": 20,
+        "jqgeeks/mvc": 20
     },
     "prefer-stable": false,
     "platform": [],

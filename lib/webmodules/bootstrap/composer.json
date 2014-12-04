@@ -1,5 +1,5 @@
 {
-    "name": "jqgeeks/bootstrap",
+    "name": "webmodules/bootstrap",
     "type": "library",
     "description": "JQuery Utilitties compatible with rudrax framework",
     "keywords": ["rudra", "API"],
@@ -7,7 +7,7 @@
     
     "require": {
     	"frameworks/bootstrap": "3.2.*",
-    	"jqgeeks/jquery": ">=1.3.0"
+    	"webmodules/jquery": ">=1.3.0"
 	},
     
     "suggest": {
