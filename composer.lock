@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "05aa5eac5b89d958c2f8ed920f24ed30",
+    "hash": "0535f70917588bfdbc5d625d8d2f2749",
     "packages": [
         {
             "name": "fortawesome/font-awesome",
@@ -99,7 +99,7 @@
             "time": "2014-06-04 15:10:13"
         },
         {
-            "name": "webmodules/bootstrap",
+            "name": "jqgeeks/bootstrap",
             "version": "dev-master",
             "source": {
                 "type": "git",
@@ -127,62 +127,12 @@
             "time": "2014-12-04 09:40:14"
         },
         {
-            "name": "webmodules/bootstrap-social",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://gitlab.com/webmodules/bootstrap-social.git",
-                "reference": "3b0d09c95311702f1672276aee0f95729c7fbca8"
-            },
-            "require": {
-                "fortawesome/font-awesome": "4.1.0",
-                "webmodules/bootstrap": "dev-master"
-            },
-            "suggest": {
-                "webmodules/bootstrap": "dev-master0 - Allows more advanced features"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "JQuery Utilitties compatible with rudrax framework",
-            "keywords": [
-                "api",
-                "rudra"
-            ],
-            "time": "2014-12-04 09:48:37"
-        },
-        {
-            "name": "webmodules/hello.js",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://gitlab.com/webmodules/hello-js.git",
-                "reference": "3df9b467f6aee97ba4be52ec0c395594bfbce330"
-            },
-            "require": {
-                "frameworks/jquery": "2.*"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "JQuery Utilitties compatible with rudrax framework",
-            "keywords": [
-                "api",
-                "rudra"
-            ],
-            "time": "2014-12-04 09:40:45"
-        },
-        {
-            "name": "webmodules/jquery",
-            "version": "dev-master",
+            "name": "jqgeeks/jquery",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/webmodules/jquery.git",
-                "reference": "632fb2ed30b834ed4e5ef397b490a33bf48b715e"
+                "reference": "9fd5c9388d6066ead77432465bb60ea540460a71"
             },
             "require": {
                 "frameworks/jquery": "2.*"
@@ -197,7 +147,7 @@
                 "api",
                 "rudra"
             ],
-            "time": "2014-12-04 09:40:33"
+            "time": "2014-09-28 09:05:54"
         },
         {
             "name": "jqgeeks/mvc",
@@ -274,30 +224,6 @@
             "time": "2014-12-03 12:04:59"
         },
         {
-            "name": "webmodules/storage-api",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://gitlab.com/webmodules/storage-api.git",
-                "reference": "e2e1599ab1e90f853972c12d665fa47e3db02182"
-            },
-            "require": {
-                "webmodules/jquery": "2.*",
-                "webmodules/jquery-cookie": "dev-master"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "JQuery Utilitties compatible with rudrax framework",
-            "keywords": [
-                "api",
-                "rudra"
-            ],
-            "time": "2014-12-04 09:43:28"
-        },
-        {
             "name": "jqgeeks/tunnel",
             "version": "dev-master",
             "source": {
@@ -322,29 +248,6 @@
             "time": "2014-12-04 08:53:36"
         },
         {
-            "name": "webmodules/typeahead",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://gitlab.com/webmodules/typeahead.git",
-                "reference": "bdae31690088f543ae8c2caf7b760cf90466f51c"
-            },
-            "require": {
-                "webmodules/jquery": "2.*"
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "JQuery Utilitties compatible with rudrax framework",
-            "keywords": [
-                "api",
-                "rudra"
-            ],
-            "time": "2014-12-04 09:47:36"
-        },
-        {
             "name": "jqgeeks/utils",
             "version": "dev-master",
             "source": {
@@ -353,7 +256,7 @@
                 "reference": "50caafb8cc153573907ba205a5aa036b461eb860"
             },
             "require": {
-                "webmodules/jquery": ">=1.3.0"
+                "jqgeeks/jquery": ">=1.3.0"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -376,7 +279,7 @@
                 "reference": "90ec29e7733418431411165e546340d9c246d745"
             },
             "require": {
-                "webmodules/jquery": ">=1.3.0",
+                "jqgeeks/jquery": ">=1.3.0",
                 "jqgeeks/utils": ">=1.0.0"
             },
             "type": "library",
@@ -513,6 +416,56 @@
             "time": "2014-12-04 09:40:14"
         },
         {
+            "name": "webmodules/bootstrap-social",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/webmodules/bootstrap-social.git",
+                "reference": "4a3271d3534208d819c642f01668665b0f7eb7e0"
+            },
+            "require": {
+                "fortawesome/font-awesome": "4.1.0",
+                "jqgeeks/bootstrap": "dev-master"
+            },
+            "suggest": {
+                "jqgeeks/bootstrap": "dev-master0 - Allows more advanced features"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "JQuery Utilitties compatible with rudrax framework",
+            "keywords": [
+                "api",
+                "rudra"
+            ],
+            "time": "2014-12-04 09:26:13"
+        },
+        {
+            "name": "webmodules/hello.js",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/webmodules/hello-js.git",
+                "reference": "3df9b467f6aee97ba4be52ec0c395594bfbce330"
+            },
+            "require": {
+                "frameworks/jquery": "2.*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "JQuery Utilitties compatible with rudrax framework",
+            "keywords": [
+                "api",
+                "rudra"
+            ],
+            "time": "2014-12-04 09:40:45"
+        },
+        {
             "name": "webmodules/jquery",
             "version": "2.1.0",
             "source": {
@@ -579,6 +532,53 @@
             "time": "2014-12-03 12:27:57"
         },
         {
+            "name": "webmodules/storage-api",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/webmodules/storage-api.git",
+                "reference": "e2e1599ab1e90f853972c12d665fa47e3db02182"
+            },
+            "require": {
+                "webmodules/jquery": "2.*",
+                "webmodules/jquery-cookie": "dev-master"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "JQuery Utilitties compatible with rudrax framework",
+            "keywords": [
+                "api",
+                "rudra"
+            ],
+            "time": "2014-12-04 09:43:28"
+        },
+        {
+            "name": "webmodules/typeahead",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.com/webmodules/typeahead.git",
+                "reference": "256401374d3dfec5e3df1a7a23b4ef69b5e06abe"
+            },
+            "require": {
+                "jqgeeks/jquery": "2.*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "JQuery Utilitties compatible with rudrax framework",
+            "keywords": [
+                "api",
+                "rudra"
+            ],
+            "time": "2014-12-04 09:21:16"
+        },
+        {
             "name": "webmodules/webcomponentsjs",
             "version": "dev-master",
             "source": {
@@ -603,16 +603,16 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "jqgeeks/bootstrap": 20,
+        "webmodules/bootstrap": 20,
+        "webmodules/typeahead": 20,
+        "webmodules/storage-api": 20,
+        "webmodules/hello.js": 20,
+        "webmodules/bootstrap-social": 20,
+        "webmodules/webcomponentsjs": 20,
         "jqgeeks/utils": 20,
         "jqgeeks/poplee": 20,
         "rudrax/core": 20,
         "jqgeeks/vutils": 20,
-        "jqgeeks/typeahead": 20,
-        "jqgeeks/storage-api": 20,
-        "jqgeeks/hello.js": 20,
-        "jqgeeks/bootstrap-social": 20,
-        "webmodules/webcomponentsjs": 20,
         "jqgeeks/mvc": 20
     },
     "prefer-stable": false,

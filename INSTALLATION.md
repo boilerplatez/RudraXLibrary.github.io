@@ -7,6 +7,10 @@ To get the best you need to install these on your machine
 	
 2) Composer (Dependency Manager)
 	- https://getcomposer.org/download/
+	For Linnux Users
+	a) curl -s http://getcomposer.org/installer | php
+	b) sudo mv composer.phar /usr/local/bin/
+	c) alias composer='/usr/local/bin/composer.phar'
 	
 3) Spring Tool Suite 3.5.1 (IDE)
 	- http://spring.io/tools/sts/all
@@ -74,6 +78,7 @@ Project Setup
 	
 	g) In console type 
 		$ composer install
+
 		
 2) Import Project in STS
 	
