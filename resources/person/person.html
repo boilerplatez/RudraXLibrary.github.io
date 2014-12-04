@@ -1,0 +1,18 @@
+<div class="my_container">
+	<div>
+		<span>{name_title}</span> : <span rx-html="name"></span>
+	</div>
+	<div>
+		<span>{status_title}</span> : <span rx-html="status"></span>
+	</div>
+	<div>
+		<span>{logs_title}</span>
+		<ul>
+			<li rx-each-todo="logs" class="searchItem">
+				<div rx-text="todo"></div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+

@@ -9,11 +9,11 @@
 class Sampleone extends AbstractHandler {
 
 	public function invokeHandler(Smarty $viewModel,Header $header, DataModel $dataModel,
-			User $user,$view="sample") {
+			User $user,$view="sample",$module="test") {
 
 		$header->title("Utils Test");
 		
-		$header->import('test');
+		$header->import($module);
 		
 		return $view;
 	}

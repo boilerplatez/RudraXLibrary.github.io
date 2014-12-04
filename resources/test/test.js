@@ -5,6 +5,7 @@ utils.define("test",function(test,_test_){
 	var testview = utils.module("test.testview");
 	
 	test._execute_ = function(){
+		//These are events are not related mvc, these are exampes of how different modules will commuicate
 		ubus.on('test_event',function(a,b,c,d){
 			console.log("test_even:__1",a,b,c,d);
 		});
