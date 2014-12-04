@@ -52,7 +52,7 @@ Project Setup
 		$ git config --global user.email = "you@somemail.com"
 		
 	c) Enter Clone Command
-		$ git clone _my_git_repo_path_url_for_project_  myProjectName
+		$ git clone https://gitlab.com/rudrax-projects/mangospring.git  SPAM_PROJECT
 	
 	d) Now you have one folder named 'myProjectName' inside proejtcs automatically created, 
 		enter this folder using cd command
